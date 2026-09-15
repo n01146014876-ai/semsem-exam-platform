@@ -1,271 +1,955 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semsem Academy | Online Exam</title>
 
-  <title>Semsem Academy | English & Sales Exam</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+body{
+  font-family:Arial,sans-serif;
+  background:#f4f7fb;
+  color:#14263d;
+  min-height:100vh;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #132238;
-      min-height: 100vh;
-    }
+header{
+  background:linear-gradient(135deg,#081d36,#123f70);
+  color:white;
+  padding:20px;
+}
 
-    header {
-      background: #0d2948;
-      color: white;
-      padding: 20px;
-    }
+.header-inner{
+  max-width:950px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
 
-    .header-inner {
-      max-width: 1000px;
-      margin: auto;
-    }
+.logo{
+  font-size:24px;
+  font-weight:900;
+}
 
-    .brand {
-      font-size: 25px;
-      font-weight: 800;
-    }
+.logo span{color:#41d7e8}
 
-    .brand span {
-      color: #45d5e8;
-    }
+.header-right{
+  font-size:13px;
+  color:#cbd9e9;
+}
 
-    .header-subtitle {
-      margin-top: 5px;
-      color: #c9d7e8;
-      font-size: 14px;
-    }
+.container{
+  max-width:850px;
+  margin:35px auto;
+  padding:0 18px;
+}
 
-    main {
-      max-width: 850px;
-      margin: 45px auto;
-      padding: 0 20px;
-    }
+.card{
+  background:white;
+  border:1px solid #e1e9f2;
+  border-radius:18px;
+  padding:32px;
+  box-shadow:0 12px 35px rgba(12,38,70,.08);
+  margin-bottom:20px;
+}
 
-    .card {
-      background: white;
-      border-radius: 18px;
-      padding: 35px;
-      box-shadow: 0 12px 35px rgba(20, 45, 75, 0.08);
-      border: 1px solid #e7edf5;
-    }
+.badge{
+  display:inline-block;
+  padding:7px 13px;
+  border-radius:30px;
+  background:#e4f9fc;
+  color:#087e91;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
 
-    .badge {
-      display: inline-block;
-      background: #e6f9fc;
-      color: #087f91;
-      padding: 7px 14px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 18px;
-    }
+h1{
+  font-size:30px;
+  margin-bottom:8px;
+}
 
-    h1 {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
+h2{
+  margin-bottom:15px;
+}
 
-    .exam-name {
-      color: #64748b;
-      margin-bottom: 30px;
-    }
+.subtitle{
+  color:#66768b;
+  margin-bottom:25px;
+}
 
-    .info {
-      background: #f7faff;
-      border-radius: 12px;
-      padding: 18px;
-      margin-bottom: 30px;
-      line-height: 1.8;
-    }
+.info{
+  background:#f5f9ff;
+  border:1px solid #e0ebf7;
+  border-radius:12px;
+  padding:17px;
+  line-height:1.8;
+  margin-bottom:25px;
+}
 
-    .info strong {
-      color: #123b67;
-    }
+label{
+  display:block;
+  font-weight:bold;
+  margin:16px 0 7px;
+}
 
-    label {
-      display: block;
-      font-weight: 700;
-      margin: 17px 0 7px;
-    }
+input{
+  width:100%;
+  padding:14px;
+  border:1px solid #cbd7e5;
+  border-radius:9px;
+  font-size:16px;
+  outline:none;
+}
 
-    input {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #ccd7e5;
-      border-radius: 9px;
-      font-size: 16px;
-      outline: none;
-    }
+input:focus{
+  border-color:#1670e8;
+  box-shadow:0 0 0 3px rgba(22,112,232,.1);
+}
 
-    input:focus {
-      border-color: #1769e0;
-      box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.1);
-    }
+button{
+  border:0;
+  background:#1769df;
+  color:white;
+  padding:14px 22px;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    button {
-      width: 100%;
-      margin-top: 28px;
-      padding: 16px;
-      border: none;
-      border-radius: 10px;
-      background: #1769e0;
-      color: white;
-      font-size: 17px;
-      font-weight: 800;
-      cursor: pointer;
-    }
+button:hover{background:#1259bf}
 
-    button:hover {
-      background: #1258bd;
-    }
+.full-btn{
+  width:100%;
+  margin-top:25px;
+}
 
-    .note {
-      text-align: center;
-      margin-top: 15px;
-      color: #8492a6;
-      font-size: 13px;
-    }
+.secondary{
+  background:#e8eef6;
+  color:#183653;
+}
 
-    footer {
-      text-align: center;
-      color: #94a3b8;
-      padding: 25px;
-      font-size: 13px;
-    }
+.secondary:hover{
+  background:#dce6f1;
+}
 
-    @media (max-width: 600px) {
-      main {
-        margin: 20px auto;
-      }
+.hidden{display:none}
 
-      .card {
-        padding: 25px 20px;
-      }
+.progress-wrap{
+  margin-bottom:20px;
+}
 
-      h1 {
-        font-size: 25px;
-      }
-    }
-  </style>
+.progress-info{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.progress{
+  height:9px;
+  background:#e5edf5;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.progress-bar{
+  height:100%;
+  width:0%;
+  background:#22b8cf;
+  transition:.3s;
+}
+
+.passage{
+  background:#f8fbff;
+  border-left:5px solid #25bdd1;
+  padding:20px;
+  line-height:1.9;
+  border-radius:10px;
+  font-size:17px;
+}
+
+.question-number{
+  color:#1471df;
+  font-weight:bold;
+  font-size:13px;
+  margin-bottom:8px;
+}
+
+.level{
+  display:inline-block;
+  font-size:11px;
+  background:#eef4fb;
+  color:#52708e;
+  padding:5px 9px;
+  border-radius:20px;
+  margin-bottom:15px;
+}
+
+.question-text{
+  line-height:1.9;
+  font-size:17px;
+}
+
+.blank{
+  display:inline-block;
+  width:160px;
+  padding:7px 9px;
+  margin:5px;
+  border-radius:7px;
+}
+
+.navigation{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:25px;
+}
+
+.review-item{
+  padding:15px;
+  border:1px solid #e2e9f1;
+  border-radius:10px;
+  margin:10px 0;
+}
+
+.result-score{
+  text-align:center;
+  padding:25px 10px;
+}
+
+.score-circle{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background:#eef8ff;
+  border:10px solid #21b7cc;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  margin:15px auto;
+}
+
+.score-number{
+  font-size:38px;
+  font-weight:900;
+  color:#123e6c;
+}
+
+.evaluation{
+  font-size:22px;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+.correct{
+  border-left:5px solid #22a76f;
+  background:#f3fcf7;
+}
+
+.wrong{
+  border-left:5px solid #df4c55;
+  background:#fff6f6;
+}
+
+.partial{
+  border-left:5px solid #e3a008;
+  background:#fffaf0;
+}
+
+.answer-analysis{
+  padding:16px;
+  margin:12px 0;
+  border-radius:10px;
+  border:1px solid #e2e9f1;
+  line-height:1.7;
+}
+
+.answer-analysis strong{
+  color:#163e68;
+}
+
+.small{
+  color:#718096;
+  font-size:13px;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  color:#8b99aa;
+  font-size:13px;
+}
+
+@media(max-width:600px){
+  .card{padding:22px 17px}
+  h1{font-size:25px}
+  .header-right{display:none}
+  .blank{
+    display:block;
+    width:100%;
+    margin:8px 0;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-inner">
-    <div class="brand">
-      SEMSEM <span>ACADEMY</span>
-    </div>
-
-    <div class="header-subtitle">
-      English & Sales Platform
-    </div>
-  </div>
+<div class="header-inner">
+  <div class="logo">SEMSEM <span>ACADEMY</span></div>
+  <div class="header-right">English & Sales Examination Platform</div>
+</div>
 </header>
 
-<main>
+<main class="container">
 
-  <div class="card">
+<!-- WELCOME -->
+<section id="welcomePage" class="card">
+  <div class="badge">ONLINE EXAM</div>
 
-    <div class="badge">
-      ONLINE EXAM
+  <h1>Welcome to Semsem Academy</h1>
+
+  <p class="subtitle">
+    English & Sales — Lesson 1 · Part 1
+  </p>
+
+  <div class="info">
+    <strong>Exam Information</strong><br>
+    Questions: 5<br>
+    Graded Blanks: 10<br>
+    Each Blank: 10 Points<br>
+    Total Score: 100 Points
+  </div>
+
+  <form id="studentForm">
+
+    <label>Full Name</label>
+    <input id="fullName"
+           type="text"
+           placeholder="Enter your full name"
+           required>
+
+    <label>Email Address</label>
+    <input id="email"
+           type="email"
+           placeholder="Enter your email"
+           required>
+
+    <label>WhatsApp Number</label>
+    <input id="whatsapp"
+           type="tel"
+           placeholder="Enter your WhatsApp number"
+           required>
+
+    <button class="full-btn" type="submit">
+      START EXAM
+    </button>
+
+  </form>
+</section>
+
+
+<!-- EXAM -->
+<section id="examPage" class="hidden">
+
+  <div class="card progress-wrap">
+    <div class="progress-info">
+      <span id="progressText">Reading Passage</span>
+      <span id="timer">00:00</span>
     </div>
 
-    <h1>Welcome to Semsem Academy</h1>
+    <div class="progress">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+  </div>
 
-    <div class="exam-name">
-      English & Sales — Lesson 1 · Part 1
+
+  <!-- PASSAGE -->
+  <div id="passageStep" class="card">
+
+    <div class="badge">READING PASSAGE</div>
+
+    <h2>Selling & Life</h2>
+
+    <div class="passage">
+      Selling is a prerequisite for life. Selling impacts every person
+      on this planet. Your ability or inability to sell, persuade,
+      negotiate, and convince others will affect every area of your
+      life and will determine how well you survive. No matter what your
+      title or position is in life, or what your role is in a company
+      or on a team, you will at some point have to convince others of
+      something.
     </div>
 
-    <div class="info">
-      <strong>Exam Information</strong><br>
-      Questions: 5<br>
-      Graded Blanks: 10<br>
-      Total Score: 100 Points<br>
-      Each Blank: 10 Points
-    </div>
-
-    <form id="studentForm">
-
-      <label for="fullName">Full Name</label>
-      <input
-        id="fullName"
-        type="text"
-        placeholder="Enter your full name"
-        required
-      >
-
-      <label for="email">Email Address</label>
-      <input
-        id="email"
-        type="email"
-        placeholder="Enter your email"
-        required
-      >
-
-      <label for="whatsapp">WhatsApp Number</label>
-      <input
-        id="whatsapp"
-        type="tel"
-        placeholder="Enter your WhatsApp number"
-        required
-      >
-
-      <button type="submit">
-        START EXAM
-      </button>
-
-    </form>
-
-    <div class="note">
-      Your exam attempt will begin when you press START EXAM.
+    <div class="navigation">
+      <span></span>
+      <button onclick="nextStep()">START QUESTIONS →</button>
     </div>
 
   </div>
+
+
+  <!-- Q1 -->
+  <div id="q1" class="card hidden">
+
+    <div class="question-number">QUESTION 1 OF 5</div>
+    <div class="level">EASY · VOCABULARY</div>
+
+    <div class="question-text">
+      Selling impacts every person on this planet.
+      Your
+      <input class="blank" id="a1" placeholder="Answer">
+      or inability to sell, persuade, negotiate, and convince others
+      will affect every area of your life.
+    </div>
+
+    <div class="navigation">
+      <button class="secondary" onclick="previousStep()">← BACK</button>
+      <button onclick="nextStep()">NEXT →</button>
+    </div>
+
+  </div>
+
+
+  <!-- Q2 -->
+  <div id="q2" class="card hidden">
+
+    <div class="question-number">QUESTION 2 OF 5</div>
+    <div class="level">EASY · VOCABULARY</div>
+
+    <div class="question-text">
+      Your ability or inability to sell, persuade,
+      <input class="blank" id="a2" placeholder="Answer">
+      and convince others will affect every area of your life and will
+      <input class="blank" id="a3" placeholder="Answer">
+      how well you survive.
+    </div>
+
+    <div class="navigation">
+      <button class="secondary" onclick="previousStep()">← BACK</button>
+      <button onclick="nextStep()">NEXT →</button>
+    </div>
+
+  </div>
+
+
+  <!-- Q3 -->
+  <div id="q3" class="card hidden">
+
+    <div class="question-number">QUESTION 3 OF 5</div>
+    <div class="level">MEDIUM · INFERENCE</div>
+
+    <div class="question-text">
+      The author calls selling a
+      "<input class="blank" id="a4" placeholder="Answer"> for life."
+
+      This word means something required before you can do something
+      else.
+
+      The author is saying: before you can succeed at ANYTHING in life,
+      you must first be able to
+      <input class="blank" id="a5" placeholder="Answer">
+      others.
+    </div>
+
+    <div class="navigation">
+      <button class="secondary" onclick="previousStep()">← BACK</button>
+      <button onclick="nextStep()">NEXT →</button>
+    </div>
+
+  </div>
+
+
+  <!-- Q4 -->
+  <div id="q4" class="card hidden">
+
+    <div class="question-number">QUESTION 4 OF 5</div>
+    <div class="level">MEDIUM · CONTEXTUAL</div>
+
+    <div class="question-text">
+      No matter what your
+      <input class="blank" id="a6" placeholder="Answer">
+      or position is in life, or what your
+      <input class="blank" id="a7" placeholder="Answer">
+      is in a company or on a team, you will at some point have to
+      convince others of something.
+    </div>
+
+    <div class="navigation">
+      <button class="secondary" onclick="previousStep()">← BACK</button>
+      <button onclick="nextStep()">NEXT →</button>
+    </div>
+
+  </div>
+
+
+  <!-- Q5 -->
+  <div id="q5" class="card hidden">
+
+    <div class="question-number">QUESTION 5 OF 5</div>
+    <div class="level">EASY · CRITICAL THINKING</div>
+
+    <div class="question-text">
+      The author writes that selling will "determine how well you
+      <input class="blank" id="a8" placeholder="Answer">."
+
+      He does NOT say "determine if you succeed" — he says
+      "determine how well you
+      <input class="blank" id="a9" placeholder="Answer">."
+
+      This word choice suggests that survival is not binary
+      (live/die). Some people survive poorly, others survive well,
+      and the difference is their ability to
+      <input class="blank" id="a10" placeholder="Answer">.
+    </div>
+
+    <div class="navigation">
+      <button class="secondary" onclick="previousStep()">← BACK</button>
+      <button onclick="showReview()">REVIEW ANSWERS →</button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- REVIEW -->
+<section id="reviewPage" class="card hidden">
+
+  <div class="badge">FINAL REVIEW</div>
+
+  <h2>Review Your Answers</h2>
+
+  <p class="subtitle">
+    Check your answers before submitting your exam.
+  </p>
+
+  <div id="reviewAnswers"></div>
+
+  <div class="navigation">
+    <button class="secondary" onclick="backToExam()">← EDIT ANSWERS</button>
+    <button onclick="submitExam()">SUBMIT EXAM</button>
+  </div>
+
+</section>
+
+
+<!-- RESULT -->
+<section id="resultPage" class="card hidden">
+
+  <div class="badge">EXAM COMPLETED</div>
+
+  <div class="result-score">
+
+    <h2>Your Result</h2>
+
+    <div class="score-circle">
+      <div id="scoreNumber" class="score-number">0</div>
+      <div>/ 100</div>
+    </div>
+
+    <div id="evaluation" class="evaluation"></div>
+
+    <p id="studentResultInfo" class="subtitle"></p>
+
+  </div>
+
+  <hr style="border:0;border-top:1px solid #e5ebf2;margin:20px 0">
+
+  <h2>Learning Analysis</h2>
+
+  <p class="subtitle">
+    Review each answer and understand the correct response.
+  </p>
+
+  <div id="analysis"></div>
+
+</section>
 
 </main>
 
 <footer>
-  Semsem Academy — Online Examination System
+Semsem Academy — Online Examination System
 </footer>
 
+
 <script>
-  document
-    .getElementById("studentForm")
-    .addEventListener("submit", function(event) {
 
-      event.preventDefault();
+let currentStep = 0;
+let startTime = null;
+let timerInterval = null;
 
-      const fullName =
-        document.getElementById("fullName").value.trim();
+const steps = [
+  "passageStep",
+  "q1",
+  "q2",
+  "q3",
+  "q4",
+  "q5"
+];
 
-      const email =
-        document.getElementById("email").value.trim();
+const answerKey = [
+  {
+    id:"a1",
+    correct:["ability"],
+    explanation:"Ability means the power or skill to do something."
+  },
+  {
+    id:"a2",
+    correct:["negotiate"],
+    explanation:"Negotiate means discussing something in order to reach an agreement."
+  },
+  {
+    id:"a3",
+    correct:["determine"],
+    explanation:"Determine here means to decide or strongly affect the result."
+  },
+  {
+    id:"a4",
+    correct:["prerequisite"],
+    explanation:"A prerequisite is something required before something else can happen."
+  },
+  {
+    id:"a5",
+    correct:["convince","sell","persuade"],
+    explanation:"The passage connects selling with the ability to convince or persuade others."
+  },
+  {
+    id:"a6",
+    correct:["title"],
+    explanation:"Title refers to a person's official position or designation."
+  },
+  {
+    id:"a7",
+    correct:["role"],
+    explanation:"Role means the function or responsibility a person has in a team or company."
+  },
+  {
+    id:"a8",
+    correct:["survive"],
+    explanation:"The passage says selling can determine how well you survive."
+  },
+  {
+    id:"a9",
+    correct:["survive"],
+    explanation:"The author deliberately focuses on how well a person survives."
+  },
+  {
+    id:"a10",
+    correct:["sell"],
+    explanation:"The central idea is that the ability to sell affects many areas of life."
+  }
+];
 
-      const whatsapp =
-        document.getElementById("whatsapp").value.trim();
 
-      if (!fullName || !email || !whatsapp) {
-        alert("Please complete all fields.");
-        return;
-      }
+function normalize(value){
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g," ");
+}
 
-      alert(
-        "Student information accepted. Exam connection is the next step."
-      );
 
-    });
+document.getElementById("studentForm")
+.addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+  const name =
+    document.getElementById("fullName").value.trim();
+
+  const email =
+    document.getElementById("email").value.trim();
+
+  const whatsapp =
+    document.getElementById("whatsapp").value.trim();
+
+  if(!name || !email || !whatsapp){
+    alert("Please complete all fields.");
+    return;
+  }
+
+  startTime = new Date();
+
+  document.getElementById("welcomePage")
+    .classList.add("hidden");
+
+  document.getElementById("examPage")
+    .classList.remove("hidden");
+
+  startTimer();
+  updateStep();
+
+  window.scrollTo(0,0);
+});
+
+
+function startTimer(){
+
+  timerInterval = setInterval(function(){
+
+    const now = new Date();
+
+    const seconds =
+      Math.floor((now-startTime)/1000);
+
+    const mins =
+      String(Math.floor(seconds/60))
+      .padStart(2,"0");
+
+    const secs =
+      String(seconds%60)
+      .padStart(2,"0");
+
+    document.getElementById("timer")
+      .textContent = mins+":"+secs;
+
+  },1000);
+
+}
+
+
+function updateStep(){
+
+  steps.forEach(function(step){
+    document.getElementById(step)
+      .classList.add("hidden");
+  });
+
+  document.getElementById(steps[currentStep])
+    .classList.remove("hidden");
+
+  const percent =
+    (currentStep/(steps.length-1))*100;
+
+  document.getElementById("progressBar")
+    .style.width = percent+"%";
+
+  if(currentStep===0){
+
+    document.getElementById("progressText")
+      .textContent="Reading Passage";
+
+  }else{
+
+    document.getElementById("progressText")
+      .textContent=
+      "Question "+currentStep+" of 5";
+
+  }
+
+  window.scrollTo(0,0);
+}
+
+
+function nextStep(){
+
+  if(currentStep < steps.length-1){
+    currentStep++;
+    updateStep();
+  }
+
+}
+
+
+function previousStep(){
+
+  if(currentStep > 0){
+    currentStep--;
+    updateStep();
+  }
+
+}
+
+
+function getAnswers(){
+
+  return answerKey.map(function(item){
+
+    return {
+      id:item.id,
+      value:document.getElementById(item.id).value.trim()
+    };
+
+  });
+
+}
+
+
+function showReview(){
+
+  const answers=getAnswers();
+
+  let html="";
+
+  answers.forEach(function(answer,index){
+
+    html += `
+      <div class="review-item">
+        <strong>Blank ${index+1}</strong><br>
+        ${answer.value || "<span class='small'>No answer</span>"}
+      </div>
+    `;
+
+  });
+
+  document.getElementById("reviewAnswers")
+    .innerHTML=html;
+
+  document.getElementById("examPage")
+    .classList.add("hidden");
+
+  document.getElementById("reviewPage")
+    .classList.remove("hidden");
+
+  window.scrollTo(0,0);
+}
+
+
+function backToExam(){
+
+  document.getElementById("reviewPage")
+    .classList.add("hidden");
+
+  document.getElementById("examPage")
+    .classList.remove("hidden");
+
+  currentStep=5;
+  updateStep();
+}
+
+
+function getEvaluation(score){
+
+  if(score>=90) return "Outstanding";
+  if(score>=80) return "Excellent";
+  if(score>=70) return "Very Good";
+  if(score>=60) return "Good";
+  if(score>=50) return "Needs Improvement";
+
+  return "Needs More Practice";
+}
+
+
+function submitExam(){
+
+  const endTime=new Date();
+
+  clearInterval(timerInterval);
+
+  let score=0;
+  let analysisHTML="";
+
+  answerKey.forEach(function(item,index){
+
+    const studentAnswer =
+      document.getElementById(item.id).value.trim();
+
+    const normalized =
+      normalize(studentAnswer);
+
+    const isCorrect =
+      item.correct.some(function(correct){
+        return normalize(correct)===normalized;
+      });
+
+    if(isCorrect){
+      score += 10;
+    }
+
+    const statusClass =
+      isCorrect ? "correct" : "wrong";
+
+    const statusText =
+      isCorrect ? "✓ Correct" : "✕ Incorrect";
+
+    analysisHTML += `
+      <div class="answer-analysis ${statusClass}">
+        <strong>Blank ${index+1} — ${statusText}</strong>
+        <br>
+
+        Your answer:
+        <strong>
+          ${studentAnswer || "No answer"}
+        </strong>
+
+        <br>
+
+        Correct answer:
+        <strong>
+          ${item.correct.join(" / ")}
+        </strong>
+
+        <br>
+
+        <span class="small">
+          ${item.explanation}
+        </span>
+      </div>
+    `;
+
+  });
+
+
+  const evaluation =
+    getEvaluation(score);
+
+  const durationSeconds =
+    Math.floor((endTime-startTime)/1000);
+
+  const minutes =
+    Math.floor(durationSeconds/60);
+
+  const seconds =
+    durationSeconds%60;
+
+
+  document.getElementById("reviewPage")
+    .classList.add("hidden");
+
+  document.getElementById("resultPage")
+    .classList.remove("hidden");
+
+
+  document.getElementById("scoreNumber")
+    .textContent=score;
+
+
+  document.getElementById("evaluation")
+    .textContent=evaluation;
+
+
+  const studentName =
+    document.getElementById("fullName").value.trim();
+
+
+  document.getElementById("studentResultInfo")
+    .textContent =
+    studentName +
+    " • Completed in " +
+    minutes +
+    "m " +
+    seconds +
+    "s";
+
+
+  document.getElementById("analysis")
+    .innerHTML=analysisHTML;
+
+
+  window.scrollTo(0,0);
+
+}
+
 </script>
 
 </body>
