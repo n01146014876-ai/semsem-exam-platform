@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Semsem Academy | Online Exam Platform</title>
+  <title>Semsem Academy | English & Sales Exam</title>
 
   <style>
     * {
@@ -16,110 +16,257 @@
     body {
       font-family: Arial, sans-serif;
       background: #f4f7fb;
-      color: #102a43;
+      color: #132238;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    }
+
+    header {
+      background: #0d2948;
+      color: white;
       padding: 20px;
     }
 
-    .container {
-      width: 100%;
-      max-width: 650px;
-      background: white;
-      padding: 45px 30px;
-      border-radius: 20px;
-      box-shadow: 0 15px 45px rgba(0,0,0,0.08);
-      text-align: center;
+    .header-inner {
+      max-width: 1000px;
+      margin: auto;
     }
 
-    .logo {
-      font-size: 34px;
+    .brand {
+      font-size: 25px;
       font-weight: 800;
-      color: #123b67;
-      margin-bottom: 8px;
     }
 
-    .subtitle {
-      color: #64748b;
-      margin-bottom: 35px;
+    .brand span {
+      color: #45d5e8;
+    }
+
+    .header-subtitle {
+      margin-top: 5px;
+      color: #c9d7e8;
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 850px;
+      margin: 45px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 35px;
+      box-shadow: 0 12px 35px rgba(20, 45, 75, 0.08);
+      border: 1px solid #e7edf5;
     }
 
     .badge {
       display: inline-block;
-      background: #e6f7ff;
-      color: #087ea4;
-      padding: 7px 15px;
-      border-radius: 20px;
-      font-size: 14px;
+      background: #e6f9fc;
+      color: #087f91;
+      padding: 7px 14px;
+      border-radius: 50px;
+      font-size: 13px;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: 28px;
-      margin-bottom: 15px;
+      font-size: 30px;
+      margin-bottom: 8px;
     }
 
-    p {
+    .exam-name {
       color: #64748b;
-      line-height: 1.7;
       margin-bottom: 30px;
     }
 
-    .button {
-      display: inline-block;
+    .info {
+      background: #f7faff;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .info strong {
+      color: #123b67;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin: 17px 0 7px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccd7e5;
+      border-radius: 9px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #1769e0;
+      box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.1);
+    }
+
+    button {
+      width: 100%;
+      margin-top: 28px;
+      padding: 16px;
+      border: none;
+      border-radius: 10px;
       background: #1769e0;
       color: white;
-      padding: 15px 32px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
+      font-size: 17px;
+      font-weight: 800;
+      cursor: pointer;
     }
 
-    .button:hover {
-      background: #1256bb;
+    button:hover {
+      background: #1258bd;
     }
 
-    .footer {
-      margin-top: 35px;
+    .note {
+      text-align: center;
+      margin-top: 15px;
+      color: #8492a6;
       font-size: 13px;
+    }
+
+    footer {
+      text-align: center;
       color: #94a3b8;
+      padding: 25px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 20px auto;
+      }
+
+      .card {
+        padding: 25px 20px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-
-    <div class="logo">SEMSEM ACADEMY</div>
-
-    <div class="subtitle">
-      English & Sales Platform
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      SEMSEM <span>ACADEMY</span>
     </div>
 
+    <div class="header-subtitle">
+      English & Sales Platform
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="card">
+
     <div class="badge">
-      Online Examination System
+      ONLINE EXAM
     </div>
 
     <h1>Welcome to Semsem Academy</h1>
 
-    <p>
-      Professional online examination platform for
-      English & Sales students.
-    </p>
+    <div class="exam-name">
+      English & Sales — Lesson 1 · Part 1
+    </div>
 
-    <a class="button" href="#">
-      START EXAM
-    </a>
+    <div class="info">
+      <strong>Exam Information</strong><br>
+      Questions: 5<br>
+      Graded Blanks: 10<br>
+      Total Score: 100 Points<br>
+      Each Blank: 10 Points
+    </div>
 
-    <div class="footer">
-      Semsem Academy Online Exam Platform
+    <form id="studentForm">
+
+      <label for="fullName">Full Name</label>
+      <input
+        id="fullName"
+        type="text"
+        placeholder="Enter your full name"
+        required
+      >
+
+      <label for="email">Email Address</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="Enter your email"
+        required
+      >
+
+      <label for="whatsapp">WhatsApp Number</label>
+      <input
+        id="whatsapp"
+        type="tel"
+        placeholder="Enter your WhatsApp number"
+        required
+      >
+
+      <button type="submit">
+        START EXAM
+      </button>
+
+    </form>
+
+    <div class="note">
+      Your exam attempt will begin when you press START EXAM.
     </div>
 
   </div>
+
+</main>
+
+<footer>
+  Semsem Academy — Online Examination System
+</footer>
+
+<script>
+  document
+    .getElementById("studentForm")
+    .addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const fullName =
+        document.getElementById("fullName").value.trim();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      const whatsapp =
+        document.getElementById("whatsapp").value.trim();
+
+      if (!fullName || !email || !whatsapp) {
+        alert("Please complete all fields.");
+        return;
+      }
+
+      alert(
+        "Student information accepted. Exam connection is the next step."
+      );
+
+    });
+</script>
 
 </body>
 </html>
