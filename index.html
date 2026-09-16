@@ -30,11 +30,7 @@ header{
   gap:15px;
 }
 
-.logo{
-  font-size:24px;
-  font-weight:900;
-}
-
+.logo{font-size:24px;font-weight:900}
 .logo span{color:#41d7e8}
 
 .header-right{
@@ -68,14 +64,8 @@ header{
   margin-bottom:15px;
 }
 
-h1{
-  font-size:30px;
-  margin-bottom:8px;
-}
-
-h2{
-  margin-bottom:15px;
-}
+h1{font-size:30px;margin-bottom:8px}
+h2{margin-bottom:15px}
 
 .subtitle{
   color:#66768b;
@@ -89,6 +79,29 @@ h2{
   padding:17px;
   line-height:1.8;
   margin-bottom:25px;
+}
+
+.form-message{
+  display:none;
+  padding:12px 14px;
+  margin-top:15px;
+  border-radius:9px;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.form-message.error{
+  display:block;
+  background:#fff2f2;
+  border:1px solid #f1c4c4;
+  color:#b4232d;
+}
+
+.form-message.success{
+  display:block;
+  background:#effbf5;
+  border:1px solid #bde8d0;
+  color:#18794e;
 }
 
 label{
@@ -124,6 +137,11 @@ button{
 
 button:hover{background:#1259bf}
 
+button:disabled{
+  opacity:.65;
+  cursor:not-allowed;
+}
+
 .full-btn{
   width:100%;
   margin-top:25px;
@@ -134,15 +152,11 @@ button:hover{background:#1259bf}
   color:#183653;
 }
 
-.secondary:hover{
-  background:#dce6f1;
-}
+.secondary:hover{background:#dce6f1}
 
 .hidden{display:none}
 
-.progress-wrap{
-  margin-bottom:20px;
-}
+.progress-wrap{margin-bottom:20px}
 
 .progress-info{
   display:flex;
@@ -272,9 +286,7 @@ button:hover{background:#1259bf}
   line-height:1.7;
 }
 
-.answer-analysis strong{
-  color:#163e68;
-}
+.answer-analysis strong{color:#163e68}
 
 .small{
   color:#718096;
@@ -292,6 +304,7 @@ footer{
   .card{padding:22px 17px}
   h1{font-size:25px}
   .header-right{display:none}
+
   .blank{
     display:block;
     width:100%;
@@ -312,8 +325,8 @@ footer{
 
 <main class="container">
 
-<!-- WELCOME -->
 <section id="welcomePage" class="card">
+
   <div class="badge">ONLINE EXAM</div>
 
   <h1>Welcome to Semsem Academy</h1>
@@ -333,24 +346,32 @@ footer{
   <form id="studentForm">
 
     <label>Full Name</label>
-    <input id="fullName"
-           type="text"
-           placeholder="Enter your full name"
-           required>
+    <input
+      id="fullName"
+      type="text"
+      placeholder="Enter your full name"
+      required
+    >
 
     <label>Email Address</label>
-    <input id="email"
-           type="email"
-           placeholder="Enter your email"
-           required>
+    <input
+      id="email"
+      type="email"
+      placeholder="Enter your email"
+      required
+    >
 
     <label>WhatsApp Number</label>
-    <input id="whatsapp"
-           type="tel"
-           placeholder="Enter your WhatsApp number"
-           required>
+    <input
+      id="whatsapp"
+      type="tel"
+      placeholder="Enter your WhatsApp number"
+      required
+    >
 
-    <button class="full-btn" type="submit">
+    <div id="formMessage" class="form-message"></div>
+
+    <button id="startExamButton" class="full-btn" type="submit">
       START EXAM
     </button>
 
@@ -358,10 +379,10 @@ footer{
 </section>
 
 
-<!-- EXAM -->
 <section id="examPage" class="hidden">
 
   <div class="card progress-wrap">
+
     <div class="progress-info">
       <span id="progressText">Reading Passage</span>
       <span id="timer">00:00</span>
@@ -370,10 +391,10 @@ footer{
     <div class="progress">
       <div id="progressBar" class="progress-bar"></div>
     </div>
+
   </div>
 
 
-  <!-- PASSAGE -->
   <div id="passageStep" class="card">
 
     <div class="badge">READING PASSAGE</div>
@@ -392,13 +413,14 @@ footer{
 
     <div class="navigation">
       <span></span>
-      <button onclick="nextStep()">START QUESTIONS →</button>
+      <button type="button" onclick="nextStep()">
+        START QUESTIONS →
+      </button>
     </div>
 
   </div>
 
 
-  <!-- Q1 -->
   <div id="q1" class="card hidden">
 
     <div class="question-number">QUESTION 1 OF 5</div>
@@ -413,14 +435,18 @@ footer{
     </div>
 
     <div class="navigation">
-      <button class="secondary" onclick="previousStep()">← BACK</button>
-      <button onclick="nextStep()">NEXT →</button>
+      <button type="button" class="secondary" onclick="previousStep()">
+        ← BACK
+      </button>
+
+      <button type="button" onclick="nextStep()">
+        NEXT →
+      </button>
     </div>
 
   </div>
 
 
-  <!-- Q2 -->
   <div id="q2" class="card hidden">
 
     <div class="question-number">QUESTION 2 OF 5</div>
@@ -435,14 +461,18 @@ footer{
     </div>
 
     <div class="navigation">
-      <button class="secondary" onclick="previousStep()">← BACK</button>
-      <button onclick="nextStep()">NEXT →</button>
+      <button type="button" class="secondary" onclick="previousStep()">
+        ← BACK
+      </button>
+
+      <button type="button" onclick="nextStep()">
+        NEXT →
+      </button>
     </div>
 
   </div>
 
 
-  <!-- Q3 -->
   <div id="q3" class="card hidden">
 
     <div class="question-number">QUESTION 3 OF 5</div>
@@ -462,14 +492,18 @@ footer{
     </div>
 
     <div class="navigation">
-      <button class="secondary" onclick="previousStep()">← BACK</button>
-      <button onclick="nextStep()">NEXT →</button>
+      <button type="button" class="secondary" onclick="previousStep()">
+        ← BACK
+      </button>
+
+      <button type="button" onclick="nextStep()">
+        NEXT →
+      </button>
     </div>
 
   </div>
 
 
-  <!-- Q4 -->
   <div id="q4" class="card hidden">
 
     <div class="question-number">QUESTION 4 OF 5</div>
@@ -485,14 +519,18 @@ footer{
     </div>
 
     <div class="navigation">
-      <button class="secondary" onclick="previousStep()">← BACK</button>
-      <button onclick="nextStep()">NEXT →</button>
+      <button type="button" class="secondary" onclick="previousStep()">
+        ← BACK
+      </button>
+
+      <button type="button" onclick="nextStep()">
+        NEXT →
+      </button>
     </div>
 
   </div>
 
 
-  <!-- Q5 -->
   <div id="q5" class="card hidden">
 
     <div class="question-number">QUESTION 5 OF 5</div>
@@ -513,8 +551,13 @@ footer{
     </div>
 
     <div class="navigation">
-      <button class="secondary" onclick="previousStep()">← BACK</button>
-      <button onclick="showReview()">REVIEW ANSWERS →</button>
+      <button type="button" class="secondary" onclick="previousStep()">
+        ← BACK
+      </button>
+
+      <button type="button" onclick="showReview()">
+        REVIEW ANSWERS →
+      </button>
     </div>
 
   </div>
@@ -522,7 +565,6 @@ footer{
 </section>
 
 
-<!-- REVIEW -->
 <section id="reviewPage" class="card hidden">
 
   <div class="badge">FINAL REVIEW</div>
@@ -536,14 +578,20 @@ footer{
   <div id="reviewAnswers"></div>
 
   <div class="navigation">
-    <button class="secondary" onclick="backToExam()">← EDIT ANSWERS</button>
-    <button onclick="submitExam()">SUBMIT EXAM</button>
+
+    <button type="button" class="secondary" onclick="backToExam()">
+      ← EDIT ANSWERS
+    </button>
+
+    <button type="button" onclick="submitExam()">
+      SUBMIT EXAM
+    </button>
+
   </div>
 
 </section>
 
 
-<!-- RESULT -->
 <section id="resultPage" class="card hidden">
 
   <div class="badge">EXAM COMPLETED</div>
@@ -577,16 +625,49 @@ footer{
 
 </main>
 
+
 <footer>
 Semsem Academy — Online Examination System
 </footer>
 
 
+<!-- Supabase browser library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
 <script>
+
+/* =========================================================
+   SUPABASE CONNECTION
+   ========================================================= */
+
+const SUPABASE_URL =
+  "https://zthuffmvcasouacjbudj.supabase.co";
+
+/*
+  IMPORTANT:
+  Replace ONLY the text below with your complete
+  Supabase Publishable Key.
+
+  DO NOT use Secret Key or service_role.
+*/
+const SUPABASE_PUBLISHABLE_KEY =
+  "";
+
+const semsemDB = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
+
+/* =========================================================
+   EXAM STATE
+   ========================================================= */
 
 let currentStep = 0;
 let startTime = null;
 let timerInterval = null;
+let currentStudentId = null;
 
 const steps = [
   "passageStep",
@@ -597,165 +678,423 @@ const steps = [
   "q5"
 ];
 
+
 const answerKey = [
+
   {
     id:"a1",
     correct:["ability"],
-    explanation:"Ability means the power or skill to do something."
+    explanation:
+      "Ability means the power or skill to do something."
   },
+
   {
     id:"a2",
     correct:["negotiate"],
-    explanation:"Negotiate means discussing something in order to reach an agreement."
+    explanation:
+      "Negotiate means discussing something in order to reach an agreement."
   },
+
   {
     id:"a3",
     correct:["determine"],
-    explanation:"Determine here means to decide or strongly affect the result."
+    explanation:
+      "Determine here means to decide or strongly affect the result."
   },
+
   {
     id:"a4",
     correct:["prerequisite"],
-    explanation:"A prerequisite is something required before something else can happen."
+    explanation:
+      "A prerequisite is something required before something else can happen."
   },
+
   {
     id:"a5",
     correct:["convince","sell","persuade"],
-    explanation:"The passage connects selling with the ability to convince or persuade others."
+    explanation:
+      "The passage connects selling with the ability to convince or persuade others."
   },
+
   {
     id:"a6",
     correct:["title"],
-    explanation:"Title refers to a person's official position or designation."
+    explanation:
+      "Title refers to a person's official position or designation."
   },
+
   {
     id:"a7",
     correct:["role"],
-    explanation:"Role means the function or responsibility a person has in a team or company."
+    explanation:
+      "Role means the function or responsibility a person has in a team or company."
   },
+
   {
     id:"a8",
     correct:["survive"],
-    explanation:"The passage says selling can determine how well you survive."
+    explanation:
+      "The passage says selling can determine how well you survive."
   },
+
   {
     id:"a9",
     correct:["survive"],
-    explanation:"The author deliberately focuses on how well a person survives."
+    explanation:
+      "The author deliberately focuses on how well a person survives."
   },
+
   {
     id:"a10",
     correct:["sell"],
-    explanation:"The central idea is that the ability to sell affects many areas of life."
+    explanation:
+      "The central idea is that the ability to sell affects many areas of life."
   }
+
 ];
 
 
+/* =========================================================
+   HELPERS
+   ========================================================= */
+
 function normalize(value){
-  return value
+
+  return String(value || "")
     .trim()
     .toLowerCase()
     .replace(/\s+/g," ");
+
 }
 
 
-document.getElementById("studentForm")
-.addEventListener("submit",function(e){
+function showFormMessage(message,type){
+
+  const box =
+    document.getElementById("formMessage");
+
+  box.textContent = message;
+  box.className = "form-message " + type;
+
+}
+
+
+function clearFormMessage(){
+
+  const box =
+    document.getElementById("formMessage");
+
+  box.textContent = "";
+  box.className = "form-message";
+
+}
+
+
+/* =========================================================
+   STUDENT REGISTRATION
+   ========================================================= */
+
+async function registerStudent(name,email,whatsapp){
+
+  const cleanEmail =
+    email.trim().toLowerCase();
+
+  /*
+    First try to find this email.
+
+    If your current RLS policy does not allow SELECT,
+    this request may fail. In that case the function
+    continues to the INSERT attempt below.
+  */
+
+  const lookup =
+    await semsemDB
+      .from("students")
+      .select("id,email")
+      .eq("email",cleanEmail)
+      .maybeSingle();
+
+
+  if(!lookup.error && lookup.data){
+
+    return {
+      student:lookup.data,
+      existing:true
+    };
+
+  }
+
+
+  const insertResult =
+    await semsemDB
+      .from("students")
+      .insert({
+        full_name:name,
+        email:cleanEmail,
+        whatsapp_number:whatsapp
+      })
+      .select("id,email")
+      .single();
+
+
+  if(insertResult.error){
+    throw insertResult.error;
+  }
+
+
+  return {
+    student:insertResult.data,
+    existing:false
+  };
+
+}
+
+
+/* =========================================================
+   START EXAM
+   ========================================================= */
+
+document
+.getElementById("studentForm")
+.addEventListener("submit",async function(e){
 
   e.preventDefault();
 
+  clearFormMessage();
+
   const name =
-    document.getElementById("fullName").value.trim();
+    document
+      .getElementById("fullName")
+      .value
+      .trim();
 
   const email =
-    document.getElementById("email").value.trim();
+    document
+      .getElementById("email")
+      .value
+      .trim();
 
   const whatsapp =
-    document.getElementById("whatsapp").value.trim();
+    document
+      .getElementById("whatsapp")
+      .value
+      .trim();
 
   if(!name || !email || !whatsapp){
-    alert("Please complete all fields.");
+
+    showFormMessage(
+      "Please complete all fields.",
+      "error"
+    );
+
     return;
   }
 
-  startTime = new Date();
 
-  document.getElementById("welcomePage")
-    .classList.add("hidden");
+  if(
+    !SUPABASE_PUBLISHABLE_KEY ||
+    SUPABASE_PUBLISHABLE_KEY ===
+      ""
+  ){
 
-  document.getElementById("examPage")
-    .classList.remove("hidden");
+    showFormMessage(
+      "Supabase Publishable Key has not been added yet.",
+      "error"
+    );
 
-  startTimer();
-  updateStep();
+    return;
+  }
 
-  window.scrollTo(0,0);
+
+  const button =
+    document.getElementById("startExamButton");
+
+  const oldButtonText =
+    button.textContent;
+
+  button.disabled = true;
+  button.textContent = "CONNECTING...";
+
+
+  try{
+
+    const registration =
+      await registerStudent(
+        name,
+        email,
+        whatsapp
+      );
+
+
+    currentStudentId =
+      registration.student.id;
+
+
+    startTime = new Date();
+
+
+    document
+      .getElementById("welcomePage")
+      .classList
+      .add("hidden");
+
+
+    document
+      .getElementById("examPage")
+      .classList
+      .remove("hidden");
+
+
+    startTimer();
+    updateStep();
+
+    window.scrollTo(0,0);
+
+  }
+  catch(error){
+
+    console.error(
+      "Student registration error:",
+      error
+    );
+
+
+    showFormMessage(
+      "Could not register the student. Please check the database connection and try again.",
+      "error"
+    );
+
+  }
+  finally{
+
+    button.disabled = false;
+    button.textContent = oldButtonText;
+
+  }
+
 });
 
 
+/* =========================================================
+   TIMER
+   ========================================================= */
+
 function startTimer(){
 
-  timerInterval = setInterval(function(){
+  if(timerInterval){
+    clearInterval(timerInterval);
+  }
 
-    const now = new Date();
 
-    const seconds =
-      Math.floor((now-startTime)/1000);
+  timerInterval =
+    setInterval(function(){
 
-    const mins =
-      String(Math.floor(seconds/60))
-      .padStart(2,"0");
+      const now =
+        new Date();
 
-    const secs =
-      String(seconds%60)
-      .padStart(2,"0");
 
-    document.getElementById("timer")
-      .textContent = mins+":"+secs;
+      const seconds =
+        Math.floor(
+          (now-startTime)/1000
+        );
 
-  },1000);
+
+      const mins =
+        String(
+          Math.floor(seconds/60)
+        ).padStart(2,"0");
+
+
+      const secs =
+        String(
+          seconds%60
+        ).padStart(2,"0");
+
+
+      document
+        .getElementById("timer")
+        .textContent =
+        mins + ":" + secs;
+
+    },1000);
 
 }
 
+
+/* =========================================================
+   EXAM NAVIGATION
+   ========================================================= */
 
 function updateStep(){
 
   steps.forEach(function(step){
-    document.getElementById(step)
-      .classList.add("hidden");
+
+    document
+      .getElementById(step)
+      .classList
+      .add("hidden");
+
   });
 
-  document.getElementById(steps[currentStep])
-    .classList.remove("hidden");
+
+  document
+    .getElementById(
+      steps[currentStep]
+    )
+    .classList
+    .remove("hidden");
+
 
   const percent =
-    (currentStep/(steps.length-1))*100;
+    (
+      currentStep /
+      (steps.length-1)
+    ) * 100;
 
-  document.getElementById("progressBar")
-    .style.width = percent+"%";
+
+  document
+    .getElementById("progressBar")
+    .style
+    .width =
+    percent + "%";
+
 
   if(currentStep===0){
 
-    document.getElementById("progressText")
-      .textContent="Reading Passage";
+    document
+      .getElementById("progressText")
+      .textContent =
+      "Reading Passage";
 
-  }else{
+  }
+  else{
 
-    document.getElementById("progressText")
-      .textContent=
-      "Question "+currentStep+" of 5";
+    document
+      .getElementById("progressText")
+      .textContent =
+      "Question " +
+      currentStep +
+      " of 5";
 
   }
 
+
   window.scrollTo(0,0);
+
 }
 
 
 function nextStep(){
 
-  if(currentStep < steps.length-1){
+  if(
+    currentStep <
+    steps.length-1
+  ){
+
     currentStep++;
+
     updateStep();
+
   }
 
 }
@@ -763,194 +1102,44 @@ function nextStep(){
 
 function previousStep(){
 
-  if(currentStep > 0){
+  if(currentStep>0){
+
     currentStep--;
+
     updateStep();
+
   }
 
 }
 
 
+/* =========================================================
+   ANSWERS
+   ========================================================= */
+
 function getAnswers(){
 
-  return answerKey.map(function(item){
+  return answerKey.map(
+    function(item){
 
-    return {
-      id:item.id,
-      value:document.getElementById(item.id).value.trim()
-    };
+      return {
 
-  });
+        id:item.id,
 
-}
+        value:
+          document
+            .getElementById(item.id)
+            .value
+            .trim()
 
+      };
 
-function showReview(){
-
-  const answers=getAnswers();
-
-  let html="";
-
-  answers.forEach(function(answer,index){
-
-    html += `
-      <div class="review-item">
-        <strong>Blank ${index+1}</strong><br>
-        ${answer.value || "<span class='small'>No answer</span>"}
-      </div>
-    `;
-
-  });
-
-  document.getElementById("reviewAnswers")
-    .innerHTML=html;
-
-  document.getElementById("examPage")
-    .classList.add("hidden");
-
-  document.getElementById("reviewPage")
-    .classList.remove("hidden");
-
-  window.scrollTo(0,0);
-}
-
-
-function backToExam(){
-
-  document.getElementById("reviewPage")
-    .classList.add("hidden");
-
-  document.getElementById("examPage")
-    .classList.remove("hidden");
-
-  currentStep=5;
-  updateStep();
-}
-
-
-function getEvaluation(score){
-
-  if(score>=90) return "Outstanding";
-  if(score>=80) return "Excellent";
-  if(score>=70) return "Very Good";
-  if(score>=60) return "Good";
-  if(score>=50) return "Needs Improvement";
-
-  return "Needs More Practice";
-}
-
-
-function submitExam(){
-
-  const endTime=new Date();
-
-  clearInterval(timerInterval);
-
-  let score=0;
-  let analysisHTML="";
-
-  answerKey.forEach(function(item,index){
-
-    const studentAnswer =
-      document.getElementById(item.id).value.trim();
-
-    const normalized =
-      normalize(studentAnswer);
-
-    const isCorrect =
-      item.correct.some(function(correct){
-        return normalize(correct)===normalized;
-      });
-
-    if(isCorrect){
-      score += 10;
     }
-
-    const statusClass =
-      isCorrect ? "correct" : "wrong";
-
-    const statusText =
-      isCorrect ? "✓ Correct" : "✕ Incorrect";
-
-    analysisHTML += `
-      <div class="answer-analysis ${statusClass}">
-        <strong>Blank ${index+1} — ${statusText}</strong>
-        <br>
-
-        Your answer:
-        <strong>
-          ${studentAnswer || "No answer"}
-        </strong>
-
-        <br>
-
-        Correct answer:
-        <strong>
-          ${item.correct.join(" / ")}
-        </strong>
-
-        <br>
-
-        <span class="small">
-          ${item.explanation}
-        </span>
-      </div>
-    `;
-
-  });
-
-
-  const evaluation =
-    getEvaluation(score);
-
-  const durationSeconds =
-    Math.floor((endTime-startTime)/1000);
-
-  const minutes =
-    Math.floor(durationSeconds/60);
-
-  const seconds =
-    durationSeconds%60;
-
-
-  document.getElementById("reviewPage")
-    .classList.add("hidden");
-
-  document.getElementById("resultPage")
-    .classList.remove("hidden");
-
-
-  document.getElementById("scoreNumber")
-    .textContent=score;
-
-
-  document.getElementById("evaluation")
-    .textContent=evaluation;
-
-
-  const studentName =
-    document.getElementById("fullName").value.trim();
-
-
-  document.getElementById("studentResultInfo")
-    .textContent =
-    studentName +
-    " • Completed in " +
-    minutes +
-    "m " +
-    seconds +
-    "s";
-
-
-  document.getElementById("analysis")
-    .innerHTML=analysisHTML;
-
-
-  window.scrollTo(0,0);
+  );
 
 }
 
-</script>
 
-</body>
-</html>
+/* =========================================================
+   REVIEW
+   =========================
